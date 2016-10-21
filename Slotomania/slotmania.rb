@@ -249,9 +249,11 @@ end
 
 
   def loadingscreen_back
+    
     repeater = 0
     while repeater < 100
 
+    while repeater < 100
       puts ""
       puts ""
       puts ""
@@ -273,7 +275,9 @@ end
       sleep 0.05
 
       system("cls")
+    end
 
+      while repeater < 100
       puts ""
       puts ""
       puts ""
@@ -295,9 +299,9 @@ end
       sleep 0.05
 
       system("cls")
+      end
 
-
-
+    while repeater < 100
       puts ""
       puts ""
       puts ""
@@ -319,6 +323,7 @@ end
       sleep 0.05
 
       system("cls")
+    end
 
   end
 
