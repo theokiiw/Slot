@@ -1,6 +1,10 @@
 def intro ()
   system("cls")
 
+  #DENNA TID ÄR HUR LÅNG TID LOADING SCREENSEN TAR PER %!
+  @loading_time = 0.006
+  #DENNA TID ÄR HUR LÅNG TID LOADING SCREENSEN TAR PER %!
+
   puts ""
   puts ""
   puts ""
@@ -61,39 +65,39 @@ def intro ()
   repeater = 0
 
   while repeater < 3
-  system("color 0f")
-  sleep tid
-  system("color 1e")
-  sleep tid
-  system("color 2d")
-  sleep tid
-  system("color 3c")
-  sleep tid
-  system("color 4b")
-  sleep tid
-  system("color 5a")
-  sleep tid
-  system("color 69")
-  sleep tid
-  system("color 78")
-  sleep tid
-  system("color 87")
-  sleep tid
-  system("color 96")
-  sleep tid
-  system("color a5")
-  sleep tid
-  system("color b4")
-  sleep tid
-  system("color c3")
-  sleep tid
-  system("color d2")
-  sleep tid
-  system("color e1")
-  sleep tid
-  system("color f0")
+    system("color 0f")
+    sleep tid
+    system("color 1e")
+    sleep tid
+    system("color 2d")
+    sleep tid
+    system("color 3c")
+    sleep tid
+    system("color 4b")
+    sleep tid
+    system("color 5a")
+    sleep tid
+    system("color 69")
+    sleep tid
+    system("color 78")
+    sleep tid
+    system("color 87")
+    sleep tid
+    system("color 96")
+    sleep tid
+    system("color a5")
+    sleep tid
+    system("color b4")
+    sleep tid
+    system("color c3")
+    sleep tid
+    system("color d2")
+    sleep tid
+    system("color e1")
+    sleep tid
+    system("color f0")
 
-  repeater += 1
+    repeater += 1
 
   end
 
@@ -126,7 +130,7 @@ def menu ()
 
 
   if svar == 1
-    farm_fortune
+    farm_fortune_loading
   elsif svar == 2
     puts "ping 2"
   else
@@ -137,7 +141,7 @@ def menu ()
 
 end
 
-def farm_fortune ()
+def farm_fortune_loading ()
   system ("cls")
   puts "ping"
 
@@ -145,30 +149,79 @@ def farm_fortune ()
 
   while repeater < 100
 
-    puts ""
-    puts ""
-    puts ""
-    puts ""
-    puts ""
-    puts ""
-    puts ""
-    puts ""
-    puts ""
-    puts ""
-    puts ""
-    puts ""
-    puts ""
-    puts ""
-    puts "                                     #{repeater}% loaded"
+    if repeater < 100
+      puts ""
+      puts ""
+      puts ""
+      puts ""
+      puts ""
+      puts ""
+      puts ""
+      puts ""
+      puts ""
+      puts ""
+      puts ""
+      puts ""
+      puts ""
+      puts ""
+      puts "                                     #{repeater}% loading."
 
-    sleep 0.05
+      repeater += 1
 
-    repeater += 1
-
+      sleep @loading_time
+    end
 
     system("cls")
 
-end
+    if repeater < 100
+      puts ""
+      puts ""
+      puts ""
+      puts ""
+      puts ""
+      puts ""
+      puts ""
+      puts ""
+      puts ""
+      puts ""
+      puts ""
+      puts ""
+      puts ""
+      puts ""
+      puts "                                     #{repeater}% loading.."
+
+      repeater += 1
+
+      sleep @loading_time
+
+      system("cls")
+
+    end
+    if repeater < 100
+      puts ""
+      puts ""
+      puts ""
+      puts ""
+      puts ""
+      puts ""
+      puts ""
+      puts ""
+      puts ""
+      puts ""
+      puts ""
+      puts ""
+      puts ""
+      puts ""
+      puts "                                     #{repeater}% loading..."
+
+      repeater += 1
+
+      sleep @loading_time
+
+      system("cls")
+    end
+
+  end
 
 
   puts ""
@@ -185,23 +238,20 @@ end
   puts ""
   puts ""
   puts ""
-  puts "                                     #{repeater}%"
+  puts "                                         100% Done!"
   sleep 2
-  @initization = 0.to_i
-farm_fortune_game
+  #VIKTIG DEL!!!! PÅ ALLA LOADING SCREENS!!!!
+  @lines = 3
+  @bet = 500
+  farm_fortune_game
+  #VIKTIG DEL!!!! PÅ ALLA LOADING SCREENS!!!!
+
 end
 
 
-  def farm_fortune_game
+def farm_fortune_game
 
   system("cls")
-
-
-  if @initization == 0
-  lines =1
-  bet = 10
-  @initization += 1
-end
 
   puts "Money #{@money}                            back: '4'"
   puts ""
@@ -209,23 +259,32 @@ end
   puts "                    $  $  $"
   puts "                    $  $  $"
   puts ""
-  print "Lines: #{lines}"
-  print "   Bet: #{bet}"
+  print "              Lines: #{@lines}"
+  print "    Bet: #{@bet}"
   puts ""
-  print "increase bet:1 increase lines:2  Spin!!!:3"
+  puts ""
+  puts "------------------"
+  puts ""
+
+  puts "1. Increase Lines"
+  puts "2. Increase Bet"
+  puts "3. Spin!"
+  puts ""
+  print "            Type Here: "
+  #print "increase bet:1 increase lines:2  Spin!!!:3"
 
 
   svar = gets.chomp.to_i
 
   if svar == 1
-    puts "how many lines?"
-    lines = gets.chomp.to_i
+    puts "How many lines?"
+    @lines = gets.chomp.to_i
     sleep (0.5)
     farm_fortune_game
 
   elsif svar == 2
-    puts "How much do you want to bet"
-    bet = gets.chomp.to_i
+    puts "How much do you want to bet?"
+    @bet = gets.chomp.to_i
     sleep (0.5)
     farm_fortune_game
 
@@ -248,81 +307,84 @@ end
 
 
 
-  def loadingscreen_back
-    repeater = 0
-    while repeater < 100
+def loadingscreen_back
+  repeater = 0
+  while repeater < 100
 
-      puts ""
-      puts ""
-      puts ""
-      puts ""
-      puts ""
-      puts ""
-      puts ""
-      puts ""
-      puts ""
-      puts ""
-      puts ""
-      puts ""
-      puts ""
-      puts ""
-      puts "                                     #{repeater}% loading."
+    if repeater < 100
+    puts ""
+    puts ""
+    puts ""
+    puts ""
+    puts ""
+    puts ""
+    puts ""
+    puts ""
+    puts ""
+    puts ""
+    puts ""
+    puts ""
+    puts ""
+    puts ""
+    puts "                                     #{repeater}% loading."
 
-      repeater += 1
+    repeater += 1
 
-      sleep 0.05
+    sleep @loading_time
+    end
 
-      system("cls")
+    system("cls")
 
-      puts ""
-      puts ""
-      puts ""
-      puts ""
-      puts ""
-      puts ""
-      puts ""
-      puts ""
-      puts ""
-      puts ""
-      puts ""
-      puts ""
-      puts ""
-      puts ""
-      puts "                                     #{repeater}% loading.."
+    if repeater < 100
+    puts ""
+    puts ""
+    puts ""
+    puts ""
+    puts ""
+    puts ""
+    puts ""
+    puts ""
+    puts ""
+    puts ""
+    puts ""
+    puts ""
+    puts ""
+    puts ""
+    puts "                                     #{repeater}% loading.."
 
-      repeater += 1
+    repeater += 1
 
-      sleep 0.05
+    sleep @loading_time
 
-      system("cls")
+    system("cls")
 
+end
+    if repeater < 100
+      puts ""
+    puts ""
+    puts ""
+    puts ""
+    puts ""
+    puts ""
+    puts ""
+    puts ""
+    puts ""
+    puts ""
+    puts ""
+    puts ""
+    puts ""
+    puts ""
+    puts "                                     #{repeater}% loading..."
 
+    repeater += 1
 
-      puts ""
-      puts ""
-      puts ""
-      puts ""
-      puts ""
-      puts ""
-      puts ""
-      puts ""
-      puts ""
-      puts ""
-      puts ""
-      puts ""
-      puts ""
-      puts ""
-      puts "                                     #{repeater}% loading..."
+    sleep @loading_time
 
-      repeater += 1
-
-      sleep 0.05
-
-      system("cls")
+    system("cls")
+      end
 
   end
 
-
   puts ""
   puts ""
   puts ""
@@ -337,27 +399,12 @@ end
   puts ""
   puts ""
   puts ""
-  puts "                                         done!"
+  puts "                                         100% Done!"
   sleep 2
 
   menu
 
 end
 
-
-
 #farm_fortune_game
 intro
-#hello ther cunt
-#i spelled there wrong above
-
-#hello
-
-#hello
-
-#i wish this worked
-
-#maybe this work!
-
-#kolla här theo, detta funkar!!!! hahahahaha
-
